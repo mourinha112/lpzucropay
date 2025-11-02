@@ -7,7 +7,18 @@ import { ArrowRight, Zap } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-purple-950 via-purple-900 to-purple-950 text-white pt-20">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(147, 51, 234, 0.5) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(147, 51, 234, 0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+      
+      {/* Animated Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-950/50 to-transparent"></div>
       
       <div className="relative container mx-auto px-4 py-20 md:py-32">
@@ -57,8 +68,8 @@ export default function Hero() {
               <div className="relative bg-gradient-to-br from-purple-900/50 to-purple-800/50 backdrop-blur-sm rounded-3xl p-8 border border-purple-400/20 shadow-2xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="text-center space-y-2">
-                    <div className="text-4xl font-bold text-purple-300">2.5%</div>
-                    <div className="text-sm text-purple-200">Taxa PIX</div>
+                    <div className="text-4xl font-bold text-purple-300">4,99%</div>
+                    <div className="text-sm text-purple-200">Taxa</div>
                   </div>
                   <div className="text-center space-y-2">
                     <div className="text-4xl font-bold text-purple-300">D+0</div>
