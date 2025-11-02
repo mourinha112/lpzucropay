@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -64,7 +66,10 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-purple-950 hover:bg-purple-900 text-white font-bold shadow-lg">
+            <Button 
+              onClick={() => router.push("/loading")}
+              className="bg-purple-950 hover:bg-purple-900 text-white font-bold shadow-lg"
+            >
               Criar Conta
             </Button>
           </div>
@@ -93,7 +98,10 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="px-4 pt-2">
-                <Button className="w-full bg-purple-950 hover:bg-purple-900 text-white font-bold shadow-lg">
+                <Button 
+                  onClick={() => router.push("/loading")}
+                  className="w-full bg-purple-950 hover:bg-purple-900 text-white font-bold shadow-lg"
+                >
                   Criar Conta
                 </Button>
               </div>

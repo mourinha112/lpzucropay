@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Shield, CheckCircle } from "lucide-react";
 
@@ -11,6 +12,8 @@ const benefits = [
 ];
 
 export default function Conversion() {
+  const router = useRouter();
+
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-purple-50 via-white to-purple-50">
       <div className="container mx-auto max-w-6xl">
@@ -42,6 +45,7 @@ export default function Conversion() {
 
             <Button 
               size="lg" 
+              onClick={() => router.push("/loading")}
               className="bg-purple-950 hover:bg-purple-900 text-white font-bold shadow-lg"
             >
               Criar conta agora

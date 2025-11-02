@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
 
 export default function Hero() {
+  const router = useRouter();
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-purple-950 via-purple-900 to-purple-950 text-white pt-20">
       {/* Grid Background Pattern */}
@@ -41,6 +43,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
             <Button 
               size="xl" 
+              onClick={() => router.push("/loading")}
               className="bg-white text-purple-950 hover:bg-purple-50 font-bold shadow-2xl"
             >
               Criar uma conta

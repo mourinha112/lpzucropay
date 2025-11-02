@@ -1,9 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket } from "lucide-react";
 
 export default function CTA() {
+  const router = useRouter();
+
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-purple-950 via-purple-900 to-purple-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
@@ -29,6 +32,7 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="xl" 
+              onClick={() => router.push("/loading")}
               className="bg-white text-purple-950 hover:bg-purple-100 font-bold shadow-2xl"
             >
               Criar Conta Grátis
